@@ -1,0 +1,140 @@
+@use "variables";
+@import "functions";
+
+// default gaps
+@each $gap in variables.$gaps {
+  .mt-#{$gap} {
+    margin-top: rem($gap);
+  }
+
+  .mb-#{$gap} {
+    margin-bottom: rem($gap);
+  }
+
+  // .ml-#{$gap} {
+  //   margin-left: rem($gap);
+  // }
+
+  // .mr-#{$gap} {
+  //   margin-right: rem($gap);
+  // }
+
+  // .mx-#{$gap} {
+  //   margin-left: rem($gap);
+  //   margin-right: rem($gap);
+  // }
+
+  // .my-#{$gap} {
+  //   margin-top: rem($gap);
+  //   margin-bottom: rem($gap);
+  // }
+
+  .pt-#{$gap} {
+    padding-top: rem($gap);
+  }
+
+  .pb-#{$gap} {
+    padding-bottom: rem($gap);
+  }
+
+  // .pl-#{$gap} {
+  //   padding-left: rem($gap);
+  // }
+
+  // .pr-#{$gap} {
+  //   padding-right: rem($gap);
+  // }
+
+  // .px-#{$gap} {
+  //   padding-left: rem($gap);
+  //   padding-right: rem($gap);
+  // }
+
+  // .py-#{$gap} {
+  //   padding-top: rem($gap);
+  //   padding-bottom: rem($gap);
+  // }
+
+  .gap-#{$gap} {
+    gap: rem($gap);
+  }
+
+  .gap-x-#{$gap} {
+    column-gap: rem($gap);
+  }
+
+  .gap-y-#{$gap} {
+    row-gap: rem($gap);
+  }
+}
+
+// breakpoint - gaps
+@each $bpkey, $breakpoint in variables.$breakpoints {
+  @media (min-width: $breakpoint) {
+    @each $gap in variables.$gaps {
+      .#{$bpkey}-mt-#{$gap} {
+        margin-top: rem($gap);
+      }
+    
+      .#{$bpkey}-mb-#{$gap} {
+        margin-bottom: rem($gap);
+      }
+    
+      // .#{$bpkey}-ml-#{$gap} {
+      //   margin-left: rem($gap);
+      // }
+    
+      // .#{$bpkey}-mr-#{$gap} {
+      //   margin-right: rem($gap);
+      // }
+    
+      // .#{$bpkey}-mx-#{$gap} {
+      //   margin-left: rem($gap);
+      //   margin-right: rem($gap);
+      // }
+    
+      // .#{$bpkey}-my-#{$gap} {
+      //   margin-top: rem($gap);
+      //   margin-bottom: rem($gap);
+      // }
+    
+      .#{$bpkey}-pt-#{$gap} {
+        padding-top: rem($gap);
+      }
+    
+      .#{$bpkey}-pb-#{$gap} {
+        padding-bottom: rem($gap);
+      }
+    
+      // .#{$bpkey}-pl-#{$gap} {
+      //   padding-left: rem($gap);
+      // }
+    
+      // .#{$bpkey}-pr-#{$gap} {
+      //   padding-right: rem($gap);
+      // }
+
+      // .#{$bpkey}-px-#{$gap} {
+      //   padding-left: rem($gap);
+      //   padding-right: rem($gap);
+      // }
+    
+      // .#{$bpkey}-py-#{$gap} {
+      //   padding-top: rem($gap);
+      //   padding-bottom: rem($gap);
+      // }
+
+      .#{$bpkey}-gap-#{$gap} {
+        gap: rem($gap);
+      }
+    
+      .#{$bpkey}-gap-x-#{$gap} {
+        column-gap: rem($gap);
+      }
+    
+      .#{$bpkey}-gap-y-#{$gap} {
+        row-gap: rem($gap);
+      }
+    }
+  }
+}

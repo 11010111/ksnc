@@ -1,0 +1,23 @@
+@import "../../scss/functions";
+
+.background-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 24, 48, 0.25) rem(1), transparent rem(1)), linear-gradient(to right, rgba(0, 24, 48, 0.25) rem(1), transparent rem(1));
+  background-size: rem(20) rem(20);
+  z-index: -1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 1) 100%);
+  }
+}

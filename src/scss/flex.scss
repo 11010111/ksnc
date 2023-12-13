@@ -1,0 +1,102 @@
+@use "variables";
+@import "functions";
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+@each $breakpoint, $value in variables.$breakpoints {
+  @media screen and (min-width: $value) {
+    .#{$breakpoint}-flex {
+      display: flex;
+    }
+    
+    .#{$breakpoint}-flex-wrap {
+      flex-wrap: wrap;
+    }
+    
+    .#{$breakpoint}-flex-col {
+      flex-direction: column;
+    }
+    
+    .#{$breakpoint}-flex-col-reverse {
+      flex-direction: column-reverse;
+    }
+    
+    .#{$breakpoint}-flex-row {
+      flex-direction: row;
+    }
+    
+    .#{$breakpoint}-flex-row-reverse {
+      flex-direction: row-reverse;
+    }
+    
+    .#{$breakpoint}-items-start {
+      align-items: flex-start;
+    }
+
+    .#{$breakpoint}-items-center {
+      align-items: center;
+    }
+    
+    .#{$breakpoint}-items-end {
+      align-items: flex-end;
+    }
+
+    .#{$breakpoint}-justify-start {
+      justify-content: flex-start;
+    }
+    
+    .#{$breakpoint}-justify-center {
+      justify-content: center;
+    }
+    
+    .#{$breakpoint}-justify-end {
+      justify-content: flex-end;
+    }
+  }
+}

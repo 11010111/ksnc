@@ -1,0 +1,102 @@
+@use "variables";
+@import "functions";
+
+.w-initial {
+  width: initial;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-33 {
+  width: 33.333%;
+}
+
+.w-66 {
+  width: 66.666%;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+@each $breakpoint, $value in variables.$breakpoints {
+  @media screen and (min-width: $value) {
+    .#{$breakpoint}-w-initial {
+      width: initial;
+    }
+    
+    .#{$breakpoint}-w-100 {
+      width: 100%;
+    }
+    
+    .#{$breakpoint}-w-auto {
+      width: auto;
+    }
+    
+    .#{$breakpoint}-w-50 {
+      width: 50%;
+    }
+    
+    .#{$breakpoint}-w-33 {
+      width: 33.333%;
+    }
+    
+    .#{$breakpoint}-w-66 {
+      width: 66.666%;
+    }
+    
+    .#{$breakpoint}-w-25 {
+      width: 25%;
+    }
+    
+    .#{$breakpoint}-w-75 {
+      width: 75%;
+    }
+    
+    .#{$breakpoint}-w-20 {
+      width: 20%;
+    }
+    
+    .#{$breakpoint}-w-40 {
+      width: 40%;
+    }
+    
+    .#{$breakpoint}-w-60 {
+      width: 60%;
+    }
+    
+    .#{$breakpoint}-w-80 {
+      width: 80%;
+    }
+  }
+}
