@@ -1,0 +1,35 @@
+@import "../../scss/functions";
+
+.gallery {
+  .gallery-wrapper {
+    display: grid;
+    row-gap: rem(24);
+
+    @media (min-width: breakpoint(lg)) {
+      row-gap: rem(40);
+    }
+
+    .headline {
+      margin: 0;
+    }
+
+    .gallery-image-wrapper {
+      column-count: 2;
+      column-gap: rem(20);
+  
+      @media (min-width: breakpoint(lg)) {
+        column-count: 3;
+      }
+    }
+  
+    picture {
+      margin: 0 0 rem(20);
+    }
+  
+    picture:first-of-type {
+      @media (min-width: breakpoint(md)) {
+        margin: rem(80) 0 rem(20);
+      }
+    }
+  }
+}
