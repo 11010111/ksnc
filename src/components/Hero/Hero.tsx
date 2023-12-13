@@ -4,29 +4,40 @@ import Container from "../Container/Container"
 import Image from "../Image/Image"
 import BackgroundPattern from "../BackgroundPattern/BackgroundPattern"
 import "./Hero.scss"
-import { ReactNode } from "react"
+
+type TextProps = {
+  headline: string;
+  bodytext?: string;
+}
+
+type ImageProps = {
+  id: string;
+  alt: string;
+  size?: string;
+}
 
 type Props = {
   id?: string;
-  children: ReactNode | ReactNode[];
-  data: {
-    imgId: string;
-    alt: string;
-    size?: string;
-  }
+  textData: TextProps;
+  imageData: ImageProps;
 }
 
-const Hero = ({ id, children, data }: Props) => {
+const Hero = ({ id, textData, imageData }: Props) => {
+  const { headline, bodytext } = textData
+  
   return (
     <>
       <Wrapper id={id} className="hero">
         <Container container={ContainerType.CONTAINER} className="container-py hero-wrapper">
           <div className="text">
-            {children}
+            <h1>{headline}</h1>
+            {bodytext && (
+              <p>{bodytext}</p>
+            )}
           </div>
 
           <div className="image">
-            <Image imgId={data.imgId} alt={data.alt} size={data.size} />
+            <Image id={imageData.id} alt={imageData.alt} size={imageData.size} />
           </div>
         </Container>
 

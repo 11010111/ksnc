@@ -1,19 +1,21 @@
-import useImagePreloader from "../../hooks/useImagePreloader"
+import useImagePreloader from "../../hooks/useImagePreloader";
+import apiService from "../../utils/apiService";
 
 type Props = {
-  imgId: string;
+  id: string;
   alt: string;
   size?: string;
 }
 
-const Image = ({ imgId, alt, size }: Props) => {
-  const { isLoaded } = useImagePreloader({ imageList: [{ imgId, size, alt }] })
+const Image = ({ id, alt, size }: Props) => {
+  const { isLoaded } = useImagePreloader({ imageList: [{ id, size, alt }] });
+  const assetURL = apiService().getAssetsById({ id, size})
 
   return (
     <>
       {isLoaded && (
         <img
-          src={`${import.meta.env.VITE_API_ASSETS_URL}/${imgId}${size ? '?key=' + size : ''}`}
+          src={assetURL.href}
           alt={alt}
           width={640}
           height={380}

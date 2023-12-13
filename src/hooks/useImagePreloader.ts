@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import apiService from "../utils/apiService";
 
 type Props = {
-  imgId: string;
+  id: string;
   alt: string;
   size?: string;
 }
@@ -17,11 +18,11 @@ const useImagePreloader = ({ imageList }: ListProps) => {
     const loadImage = (img: Props) => {
       return new Promise((resolve, reject) => {
         const image = new Image()
-        image.src = `${import.meta.env.VITE_API_ASSETS_URL}/${img.imgId}${img.size ? '?key=' + img.size : '?key=sm'}`
+        image.src = apiService().getAssetsById({ id: img.id, size: img.size }).href
         image.alt = img.alt
 
         image.onload = () => {
-          resolve(img.imgId)
+          resolve(img.id)
         }
 
         image.onerror = (err) => {
@@ -35,7 +36,7 @@ const useImagePreloader = ({ imageList }: ListProps) => {
         setLoaded(true)
       })
       .catch(err => {
-        console.warn(err)
+        console.error('Failed to load asset', err)
       })
   })
 

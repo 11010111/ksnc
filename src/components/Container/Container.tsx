@@ -1,17 +1,19 @@
 import { ReactNode } from "react"
 import { ContainerType } from "./ContainerType"
+import { ContainerAlignment } from "./ContainerAlignment"
 
 type Props = {
   id?: string;
   children: ReactNode | ReactNode[];
   container?: ContainerType;
-  className?: string | null
+  className?: string | null;
+  alignment?: ContainerAlignment;
 }
 
-const Container = ({ id, children, container, className }: Props) => {
+const Container = ({ id, children, container, className, alignment }: Props) => {
   const classList = [
     container,
-    className ?? "container-py"
+    className ?? `container-py${alignment ? ' ' + alignment : ''}`
   ]
 
   return (
