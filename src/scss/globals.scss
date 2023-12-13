@@ -176,6 +176,8 @@ footer {
 
   &::before {
     content: '';
+    position: relative;
+    bottom: rem(-1);
     display: block;
     width: 100%;
     height: rem(24);
