@@ -183,7 +183,7 @@ footer {
     height: rem(24);
     background: #222;
     clip-path: polygon(0% 100%, 100% 0%, 100% 100%, 100% 100%);
-    
+
     @media (min-width: breakpoint(md)) {
       height: rem(40);
     }
