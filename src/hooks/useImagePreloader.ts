@@ -4,7 +4,8 @@ import apiService from "../utils/apiService";
 type Props = {
   id: string;
   alt: string;
-  size?: string;
+  width?: number;
+  height?: number;
 }
 
 type ListProps = {
@@ -17,8 +18,10 @@ const useImagePreloader = ({ imageList }: ListProps) => {
   useEffect(() => {
     const loadImage = (img: Props) => {
       return new Promise((resolve, reject) => {
+        const imgSize = img.width && img.height ? `/${img.width}/${img.height}` : ''
+        const imgSrc = apiService().getAssetsById({ id: img.id }).href
         const image = new Image()
-        image.src = apiService().getAssetsById({ id: img.id, size: img.size }).href
+        image.src = imgSrc + imgSize
         image.alt = img.alt
 
         image.onload = () => {

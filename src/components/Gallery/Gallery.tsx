@@ -1,3 +1,4 @@
+import React from "react";
 import { ContainerAlignment } from "../Container/ContainerAlignment";
 import { ContainerType } from "../Container/ContainerType";
 import Wrapper from "../Wrapper/Wrapper";
@@ -8,7 +9,6 @@ import "./Gallery.scss";
 type ImageProps = {
   id: string;
   alt: string;
-  size?: string;
 }
 
 type Props = {
@@ -30,11 +30,11 @@ const Gallery = ({ id, headline, imageList, background, color, container, alignm
             {headline && (<h2 className="headline">{headline}</h2>)}
 
             <div className="gallery-image-wrapper">
-              {imageList.map(image => {
+              {imageList.map((image, index) => {
                 return (
-                  <>
-                    <Picture id={image.id} alt={image.alt} size={image.size} />
-                  </>
+                  <React.Fragment key={index}>
+                    <Picture id={image.id} alt={image.alt} />
+                  </React.Fragment>
                 )
               })}
             </div>

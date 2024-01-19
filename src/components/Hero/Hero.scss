@@ -29,6 +29,8 @@
 
     .image {
       img {
+        width: 100%;
+        
         @media (min-width: breakpoint(lg)) {
           box-shadow: rem(10) rem(10) rem(20) rgba(15, 16, 10, 0.75);
         }

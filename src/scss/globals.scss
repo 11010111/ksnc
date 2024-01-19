@@ -50,7 +50,7 @@ html {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: #fff;
-  color: #5b5855;
+  color: #6d512f;
 
   @media (min-width: 1921px) {
     font-size: calc(1vw - ((1920px / 16) / 100));
@@ -91,7 +91,7 @@ h6,
   // -webkit-hyphens: auto;
   // -moz-hyphens: auto;
   color: transparent;
-  background: linear-gradient(to right, #0f110a, #9e9893);
+  background: linear-gradient(to right, #232d30, #e7bd87);
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -199,6 +199,12 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.img-full {
+  img {
+    width: 100%;
+  }
 }
 
 .w-600 {

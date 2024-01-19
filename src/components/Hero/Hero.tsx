@@ -13,7 +13,8 @@ type TextProps = {
 type ImageProps = {
   id: string;
   alt: string;
-  size?: string;
+  width: number;
+  height: number;
 }
 
 type Props = {
@@ -37,7 +38,7 @@ const Hero = ({ id, textData, imageData }: Props) => {
           </div>
 
           <div className="image">
-            <Image id={imageData.id} alt={imageData.alt} size={imageData.size} />
+            <Image id={imageData.id} alt={imageData.alt} width={imageData.width} height={imageData.height} />
           </div>
         </Container>
 

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import "./Navigation.scss"
+import Image from "../Image/Image"
 
 const Navigation = () => {
   return (
@@ -7,7 +8,9 @@ const Navigation = () => {
       <header className="navigation">
         <nav>
           <div className="logo">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">
+              <Image id="112" alt="Logo" width={40} height={40} />
+            </NavLink>
           </div>
 
           <div className="link-wrapper">

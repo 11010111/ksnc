@@ -4,18 +4,34 @@ import apiService from "../../utils/apiService";
 type Props = {
   id: string;
   alt: string;
-  size?: string;
+  width?: number;
+  height?: number;
 }
 
-const Image = ({ id, alt, size }: Props) => {
-  const { isLoaded } = useImagePreloader({ imageList: [{ id, size, alt }] });
-  const assetURL = apiService().getAssetsById({ id, size})
+const Image = ({ id, alt, width, height }: Props) => {
+  const { isLoaded } = useImagePreloader({ imageList: [{ id, alt, width, height }] });
+  const assetURL = apiService().getAssetsById({ id })
+
+  if (width && height) {
+    return (
+      <>
+        {isLoaded && (
+          <img
+            src={assetURL.href + `/${width}/${height}`}
+            alt={alt}
+            width={width}
+            height={height}
+          />
+        )}
+      </>
+    )
+  }
 
   return (
     <>
       {isLoaded && (
         <img
-          src={assetURL.href}
+          src={assetURL.href + `/${640}/${360}`}
           alt={alt}
           width={640}
           height={380}
